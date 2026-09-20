@@ -1,0 +1,598 @@
+```html
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For My Love ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow: hidden;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background:
+                radial-gradient(
+                    circle at center,
+                    #481322 0%,
+                    #1b060d 55%,
+                    #070207 100%
+                );
+            color: white;
+        }
+
+        /* ========================================
+           Floating Hearts
+        ======================================== */
+
+        .heart-bg {
+            position: fixed;
+            bottom: -50px;
+            opacity: 0;
+            animation: floatUp linear infinite;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .h1 {
+            left: 8%;
+            font-size: 20px;
+            animation-duration: 9s;
+            animation-delay: 1s;
+        }
+
+        .h2 {
+            left: 22%;
+            font-size: 15px;
+            animation-duration: 12s;
+            animation-delay: 4s;
+        }
+
+        .h3 {
+            left: 45%;
+            font-size: 22px;
+            animation-duration: 8s;
+            animation-delay: 2s;
+        }
+
+        .h4 {
+            left: 68%;
+            font-size: 17px;
+            animation-duration: 11s;
+            animation-delay: 5s;
+        }
+
+        .h5 {
+            left: 88%;
+            font-size: 21px;
+            animation-duration: 10s;
+            animation-delay: 3s;
+        }
+
+        @keyframes floatUp {
+
+            0% {
+                transform: translateY(0) scale(.7) rotate(0deg);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: .8;
+            }
+
+            80% {
+                opacity: .8;
+            }
+
+            100% {
+                transform:
+                    translateY(-110vh)
+                    scale(1.3)
+                    rotate(20deg);
+                opacity: 0;
+            }
+        }
+
+
+        /* ========================================
+           Pages
+           Each page = 10 seconds
+           Total loop = 40 seconds
+        ======================================== */
+
+        .page {
+            position: absolute;
+            inset: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 30px;
+
+            text-align: center;
+
+            opacity: 0;
+            visibility: hidden;
+
+            animation: pageShow 40s infinite;
+        }
+
+        .page:nth-of-type(1) {
+            animation-delay: 0s;
+        }
+
+        .page:nth-of-type(2) {
+            animation-delay: 10s;
+        }
+
+        .page:nth-of-type(3) {
+            animation-delay: 20s;
+        }
+
+        .page:nth-of-type(4) {
+            animation-delay: 30s;
+        }
+
+
+        /* Smooth fade in / fade out */
+
+        @keyframes pageShow {
+
+            0% {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            3% {
+                opacity: 0;
+                visibility: visible;
+            }
+
+            7% {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            21% {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            25% {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+
+        .content {
+            max-width: 850px;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+
+        /* ========================================
+           Main Heart
+        ======================================== */
+
+        .heart {
+            width: 90px;
+            height: 90px;
+
+            background: #ff315d;
+
+            position: relative;
+
+            margin: 0 auto 65px;
+
+            transform: rotate(-45deg);
+
+            animation: heartbeat 1.2s infinite;
+
+            filter:
+                drop-shadow(0 0 15px #ff315d)
+                drop-shadow(
+                    0 0 35px rgba(255, 49, 93, .7)
+                );
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+
+            width: 90px;
+            height: 90px;
+
+            background: #ff315d;
+
+            position: absolute;
+
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -45px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: 45px;
+            top: 0;
+        }
+
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: rotate(-45deg) scale(1);
+            }
+
+            15% {
+                transform: rotate(-45deg) scale(1.16);
+            }
+
+            30% {
+                transform: rotate(-45deg) scale(1);
+            }
+
+            45% {
+                transform: rotate(-45deg) scale(1.10);
+            }
+
+            60% {
+                transform: rotate(-45deg) scale(1);
+            }
+        }
+
+
+        /* ========================================
+           Lebanese Arabizi
+        ======================================== */
+
+        .lebanese {
+            direction: ltr;
+
+            font-size: 27px;
+
+            line-height: 1.8;
+
+            color: #ffd8e1;
+
+            font-weight: 500;
+        }
+
+        .highlight {
+            color: #ff8eaa;
+
+            font-size: 31px;
+
+            font-weight: 700;
+
+            text-shadow:
+                0 0 18px rgba(255, 80, 120, .5);
+        }
+
+
+        /* ========================================
+           Arabic
+        ======================================== */
+
+        .arabic {
+            direction: rtl;
+
+            font-size: 25px;
+
+            line-height: 2;
+
+            color: #ffe9ee;
+
+            font-weight: 400;
+        }
+
+
+        /* ========================================
+           French
+        ======================================== */
+
+        .french {
+            margin-top: 35px;
+
+            direction: ltr;
+
+            font-size: 18px;
+
+            color: #dcaab7;
+
+            font-style: italic;
+
+            letter-spacing: .3px;
+        }
+
+
+        /* ========================================
+           Final Page
+        ======================================== */
+
+        .final {
+            font-size: 32px;
+
+            color: #ffb1c3;
+
+            line-height: 1.8;
+
+            font-weight: 600;
+        }
+
+        .final-heart {
+            font-size: 45px;
+
+            margin-top: 25px;
+
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.25);
+            }
+        }
+
+
+        /* ========================================
+           Mobile
+        ======================================== */
+
+        @media (max-width: 600px) {
+
+            .page {
+                padding: 22px;
+            }
+
+            .heart {
+                width: 65px;
+                height: 65px;
+
+                margin-bottom: 50px;
+            }
+
+            .heart::before,
+            .heart::after {
+                width: 65px;
+                height: 65px;
+            }
+
+            .heart::before {
+                top: -32px;
+            }
+
+            .heart::after {
+                left: 32px;
+            }
+
+            .lebanese {
+                font-size: 21px;
+
+                line-height: 1.9;
+            }
+
+            .highlight {
+                font-size: 24px;
+            }
+
+            .arabic {
+                font-size: 20px;
+
+                line-height: 2;
+            }
+
+            .french {
+                font-size: 15px;
+
+                margin-top: 28px;
+            }
+
+            .final {
+                font-size: 26px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- ========================================
+         Floating Hearts
+    ======================================== -->
+
+    <div class="heart-bg h1">❤️</div>
+    <div class="heart-bg h2">💕</div>
+    <div class="heart-bg h3">❤️</div>
+    <div class="heart-bg h4">💗</div>
+    <div class="heart-bg h5">❤️</div>
+
+
+    <!-- ========================================
+         PAGE 1
+    ======================================== -->
+
+    <section class="page">
+
+        <div class="content">
+
+            <div class="heart"></div>
+
+            <div class="lebanese">
+
+                <span class="highlight">
+                    Ktiir shta2telk ya umri,
+                </span>
+
+                <br>
+
+                w albi w ruhiiiii...
+
+                <br>
+
+                <span class="highlight">
+                    Ktiir bhebkkkk ghanujtiiiiii ❤️
+                </span>
+
+            </div>
+
+            <div class="french">
+
+                Tu es le plus beau cadeau
+                que la vie m’a offert.
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         PAGE 2
+    ======================================== -->
+
+    <section class="page">
+
+        <div class="content">
+
+            <div class="arabic">
+
+                جسد هنا وقلب هناك،
+                <br>
+
+                أنت في حفظ الله وفي قلبي أنا.
+
+                <br><br>
+
+                أراك بقلبي لا بعيني،
+                <br>
+
+                ألمسك بروحي لا بيدي،
+                <br>
+
+                أتنفسك بإحساسي لا برؤيتي لك.
+
+            </div>
+
+            <div class="french">
+
+                Même loin de toi,
+                mon cœur reste toujours près du tien.
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         PAGE 3
+    ======================================== -->
+
+    <section class="page">
+
+        <div class="content">
+
+            <div class="arabic">
+
+                أحبك رغم المسافات،
+                <br>
+
+                أحبك أضعاف تلك المسافات.
+
+                <br><br>
+
+                كلما زادت،
+                زاد حبي لك.
+
+                <br><br>
+
+                أحبك غنوجتي،
+                محبوبتي،
+                أميرتي،
+                قمري…
+
+            </div>
+
+            <div class="french">
+
+                Je t’aime malgré les kilomètres,
+                et chaque distance me fait t’aimer encore plus.
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         PAGE 4
+    ======================================== -->
+
+    <section class="page">
+
+        <div class="content">
+
+            <div class="arabic">
+
+                أحبك يا أجمل ما في الكون.
+
+            </div>
+
+            <br>
+
+            <div class="final">
+
+                Tu es le plus beau cadeau
+                <br>
+
+                que la vie m’a offert.
+
+                <br><br>
+
+                Je t’aime ❤️
+
+            </div>
+
+            <div class="final-heart">
+                ❤️
+            </div>
+
+        </div>
+
+    </section>
+
+
+</body>
+</html>
+```
